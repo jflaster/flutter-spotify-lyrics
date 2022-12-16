@@ -48,24 +48,6 @@ class SpotifyLyricsState extends State<SpotifyLyricsData> {
   String test = '';
 
   Future<void> get_token() async {
-    /*
-    var resonse =
-        await http.get(Uri.parse(Uri.encodeFull(SPOTIFY_URL)), headers: {
-      "User-Agent":
-          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36",
-      "App-platform": "WebPlayer",
-      "content-type": "text/html; charset=utf-8",
-      "cookie": "sp_dc=$sp_dc"
-    });
-
-    bool exists = await File('config.json').exists();
-    if (exists) {
-      config_json = File('config.json').readAsStringSync();
-      token_exp_time =
-          jsonDecode(config_json)['accessTokenExpirationTimestampMs'];
-    }
-    */
-
     var response = await http.get(
         Uri.parse(Uri.encodeFull(
             "https://open.spotify.com/get_access_token?reason=transport&productType=web_player")),
